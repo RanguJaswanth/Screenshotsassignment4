@@ -1,0 +1,26 @@
+-- Create database
+CREATE DATABASE school_db;
+
+-- Switch to the database
+USE school_db;
+
+-- Create STUDENT table
+CREATE TABLE STUDENT (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(50) UNIQUE,
+    dob DATE,
+    marks INT
+);
+INSERT INTO STUDENT (name, email, dob, marks) VALUES
+('Alice Johnson', 'alice@example.com', '2002-05-14', 85),
+('Bob Smith', 'bob@example.com', '2001-09-20', 65),
+('Charlie Brown', 'charlie@example.com', '2003-01-10', 72),
+('Diana Prince', 'diana@example.com', '2002-12-01', 90),
+('Ethan Hunt', 'ethan@example.com', '2001-07-07', 55);
+SELECT * 
+FROM STUDENT
+WHERE marks > 70;
+SELECT AVG(marks) AS average_marks
+FROM STUDENT;
+SELECT * FROM STUDENT;
